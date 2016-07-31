@@ -17,7 +17,8 @@ export class NavigationComponent {
         this.topics = topicService.getTopics();
     }
 
-    addTopic() {
+    addTopic(event) {
+        event.preventDefault();
         this.id = Math.max.apply(Math, this.topics.map(function (o) {
                 return o.id;
             })) + 1;
